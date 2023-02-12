@@ -2,7 +2,7 @@
 div
   .top-view
     h1 find your drive
-    CarSearchBar
+      CarSearchBar
 </template>
 
 <style>

@@ -9,5 +9,6 @@ header
   font-family: "mono";
   color: gray;
   font-size: 16px;
+  float: left;
 };
 </style>
