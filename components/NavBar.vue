@@ -6,7 +6,7 @@ header
 
 <style>
 .nav-logo {
-  font-family: mono;
+  font-family: "mono";
   color: gray;
   font-size: 16px;
 };
