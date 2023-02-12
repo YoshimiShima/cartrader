@@ -2,6 +2,7 @@
 header
   .nav-logo
     a(href="/") Cartrader
+      p.box
 </template>
 
 <style>
@@ -22,5 +23,8 @@ header
   .nav-logo {
     font-size: 18px;
   }
+}
+.p {
+  border-bottom: 1px solid gray;
 }
 </style>

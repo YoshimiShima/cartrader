@@ -1,21 +1,26 @@
 <template lang="pug">
 div
   .top-view
-    .h1.h1 find your drive
-      CarSearchBar
+    .top-bg
+      .h1.h1 find your drive
+        CarSearchBar
 </template>
 
 <style>
   .top-view {
     width: 100%;
-    padding-bottom: 56.1%;
+    height: 800px;
     background-image: url('https://carconfigurator.ferrari.com/assets/cars/portofinom/packages/default/car-ferrari-portofino-m_splash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     color: white;
-    font-size: 30px;
     position:relative;
+  }
+  .top-bg {
+    width: 100%;
+    height: 800px;
+    background-color: rgba(0,0,0,0.6);
   }
   .h1 {
     position:absolute;
