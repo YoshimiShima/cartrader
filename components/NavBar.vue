@@ -6,9 +6,10 @@ header
 
 <style>
 .nav-logo {
-  font-family: "mono";
+  font-family: 'Courier New', Courier, monospace;
   color: gray;
-  font-size: 16px;
-  float: left;
+  font-size: 32px;
+  display: flex;
+  padding: 20px;
 };
 </style>

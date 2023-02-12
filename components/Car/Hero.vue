@@ -8,6 +8,7 @@ div
 <style>
   .top-view {
     width: 100%;
+    height: 300px;
     padding-bottom: 56.1%;
     background-image: url('https://carconfigurator.ferrari.com/assets/cars/portofinom/packages/default/car-ferrari-portofino-m_splash.jpg');
     background-repeat: no-repeat;
