@@ -8,11 +8,6 @@ export default {
     return {
       value: 'find your drive'
     }
-  },
-  methods:{
-    inputEvent(event) {
-      console.log(event.target.value);
-    }
   }
 }
 </script>
@@ -22,7 +17,7 @@ div
   .top-view
     div.top-bg
       .h1.h1 {{ value }}
-        CarSearchBar(v-model.lazy="value")
+        CarSearchBar(v-model="value")
 </template>
 
 <style>

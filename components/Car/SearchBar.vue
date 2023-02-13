@@ -10,8 +10,8 @@ export default {
 input(
   type= "text",
   placeholder="Search by city..."
-  v-on:input="value"
-  @input="$emit('input',$event.target.value)"
+  v-model="value"
+  @input="$emit('input',newValue)"
 )
 button(type='button', onclick='addResearch')|Search
 
