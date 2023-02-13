@@ -5,12 +5,11 @@ export default {
   },
 }
 </script>
-
+<!-- v-model="value" -->
 <template lang="pug">
 input(
   type= "text",
   placeholder="Search by city..."
-  v-model="value"
   @input="$emit('input',newValue)"
 )
 button(type='button', onclick='addResearch')|Search

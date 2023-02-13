@@ -8,6 +8,11 @@ export default {
     return {
       value: 'find your drive'
     }
+  },
+  methods: {
+  InputEvent(event) {
+    this.value=value
+  }
   }
 }
 </script>
@@ -17,7 +22,7 @@ div
   .top-view
     div.top-bg
       .h1.h1 {{ value }}
-        CarSearchBar(v-model="value")
+        CarSearchBar(v-model="Value")
 </template>
 
 <style>
