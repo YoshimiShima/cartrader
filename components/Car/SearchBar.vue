@@ -10,7 +10,7 @@ export default {
 input(
   type= "text",
   placeholder="Search by city..."
-  @input="$emit('input',newValue)"
+  @input="$emit('input-emit',value)"
 )
 button(type='button', onclick='addResearch')|Search
 

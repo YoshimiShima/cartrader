@@ -10,9 +10,9 @@ export default {
     }
   },
   methods: {
-  InputEvent(event) {
-    this.value=value
-  }
+    InputEvent(event) {
+      this.$emit('input', value)
+    }
   }
 }
 </script>
@@ -22,7 +22,7 @@ div
   .top-view
     div.top-bg
       .h1.h1 {{ value }}
-        CarSearchBar(v-model="Value")
+        CarSearchBar(@input-emit='InputEvent')
 </template>
 
 <style>
