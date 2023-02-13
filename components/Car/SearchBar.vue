@@ -1,22 +1,19 @@
-<script setup>
-// const city = ref("");
-// const cityError = ref(false)
-
-// const handleSearch = () => {
-//   if(!city.value){
-//     return cityError.value = true
-//   }
-//   navigateTo(`/city/${city.value}/car`);
-// };
+<script setup lang="ts">
+export default {
+  props: {
+    value: string
+  },
+}
 </script>
 
 <template lang="pug">
 input(
   type= "text",
   placeholder="Search by city..."
-  v-model="city"
+  :value="value"
+  @input="$emit('input',$event.target.value)"
 )
-button(type='button', onclick='handleSearch')|Search
+button(type='button', onclick='addResearch')|Search
 
 </template>
 

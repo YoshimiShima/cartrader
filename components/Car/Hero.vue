@@ -1,8 +1,22 @@
+<script setup lang="ts">
+import SearchBar from './components/Car/SearchBar.vue'
+export default {
+  components: {
+    SearchBar
+  },
+  data () {
+    return {
+      value: 'find your drive'
+    }
+  }
+}
+</script>
+<!-- //- .h1.h1 find your drive -->
 <template lang="pug">
 div
   .top-view
     .top-bg
-      .h1.h1 find your drive
+      searchBar v-bind:val="value"
         CarSearchBar
 </template>
 
@@ -22,7 +36,7 @@ div
     height: 800px;
     background-color: rgba(0,0,0,0.6);
   }
-  .h1 {
+  .searchBar {
     position:absolute;
     font-size: 64px;
     font-family: serif;
