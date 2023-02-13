@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import SearchBar from './components/Car/SearchBar.vue'
+<script>
+import SearchBar from './SearchBar.vue'
 export default {
   components: {
     SearchBar
@@ -8,6 +8,11 @@ export default {
     return {
       value: 'find your drive'
     }
+  },
+  methods:{
+    inputEvent(event) {
+      console.log(event.target.value);
+    }
   }
 }
 </script>
@@ -15,9 +20,9 @@ export default {
 <template lang="pug">
 div
   .top-view
-    .top-bg
-      searchBar v-bind:val="value"
-        CarSearchBar
+    div.top-bg
+      .h1.h1 {{ value }}
+        CarSearchBar(v-model.lazy="value")
 </template>
 
 <style>
@@ -36,7 +41,7 @@ div
     height: 800px;
     background-color: rgba(0,0,0,0.6);
   }
-  .searchBar {
+  .h1 {
     position:absolute;
     font-size: 64px;
     font-family: serif;

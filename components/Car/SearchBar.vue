@@ -1,7 +1,7 @@
-<script setup lang="ts">
+<script>
 export default {
   props: {
-    value: string
+    value: String
   },
 }
 </script>
@@ -10,7 +10,7 @@ export default {
 input(
   type= "text",
   placeholder="Search by city..."
-  :value="value"
+  v-on:input="value"
   @input="$emit('input',$event.target.value)"
 )
 button(type='button', onclick='addResearch')|Search
