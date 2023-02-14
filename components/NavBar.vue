@@ -10,6 +10,7 @@ header
   font-family: 'Courier New', Courier, monospace;
   color: gray;
   font-size: 32px;
+  font-weight: 900;
   display: flex;
   padding: 20px;
   background-color: cadetblue;
