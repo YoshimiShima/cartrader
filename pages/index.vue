@@ -26,16 +26,16 @@ export default {
   .carHero
     CarHero
   .result
-    h1 {{ message }}
-    .result(value="text" @received-message="receiveMessage")
+    h1(value="text" @received-message="receiveMessage") {{ message }}
+
 
 </template>
 
 <style>
 .page{
   display: grid;
-  height: 1650px;
-  grid-template-rows:50% 50%;
+  height: 1500px;
+  grid-template-rows:48% 52%;
   grid-template-columns: 100%;
 }
 .carHero{

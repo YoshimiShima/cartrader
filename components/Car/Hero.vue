@@ -10,11 +10,8 @@ export default {
     }
   },
   props: {
-    message: {
-      type: String,
-      default: ''
-    }
-  }
+    message:String
+  },
   methods: {
     receive(value) {
       this.value = value;
@@ -32,14 +29,14 @@ export default {
   div
     .top-view
       .top-bg
-      .h1.h1 {{ value }}
-          CarSearchBar(value="text" @input-emit="receive")
+      .h1.h1 find your car
+          CarSearchBar(@input-emit="receive")
 </template>
 
 <style>
   .top-view {
     width: 100%;
-    height: 800px;
+    height: 700px;
     background-image: url('https://carconfigurator.ferrari.com/assets/cars/portofinom/packages/default/car-ferrari-portofino-m_splash.jpg');
     background-position: center;
     background-repeat: no-repeat;
