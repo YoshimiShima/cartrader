@@ -19,12 +19,11 @@ export default {
 <!-- //- .h1.h1 find your drive -->
 <template lang="pug">
 #receive-area
-  .SearchBar(value="text" @input-emit="receive")
   div
     .top-view
       div.top-bg
         .h1.h1 {{ value }}
-          CarSearchBar
+          CarSearchBar(value="text" @input-emit="receive")
 </template>
 
 <style>
