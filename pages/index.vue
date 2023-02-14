@@ -9,7 +9,7 @@ export default {
   },
   data () {
     return {
-      message: 'your result:'
+      message: ''
     }
   },
   methods: {
@@ -26,7 +26,7 @@ export default {
   .carHero
     CarHero(message="text" @received-message="receiveMessage")
   .result
-    h1 {{ message }}
+    h1 you want {{ message }}
 
 
 
@@ -46,7 +46,7 @@ export default {
 .result{
   grid-row: 2;
   grid-column: 1;
-  font-size: 38px;
+  font-size: 32px;
   color: sienna;
   font-family: serif;
 }
