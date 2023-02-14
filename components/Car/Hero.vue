@@ -2,7 +2,7 @@
 import SearchBar from './SearchBar.vue'
 export default {
   components: {
-    SearchBar
+    SearchBar:SearchBar
   },
   data () {
     return {
@@ -10,19 +10,21 @@ export default {
     }
   },
   methods: {
-    InputEvent(event) {
-      this.$emit('input', value)
+    receive(value) {
+      this.value = value;
     }
   }
 }
 </script>
 <!-- //- .h1.h1 find your drive -->
 <template lang="pug">
-div
-  .top-view
-    div.top-bg
-      .h1.h1 {{ value }}
-        CarSearchBar(@input-emit='InputEvent')
+#receive-area
+  .SearchBar(value="text" @input-emit="receive")
+  div
+    .top-view
+      div.top-bg
+        .h1.h1 {{ value }}
+          CarSearchBar
 </template>
 
 <style>

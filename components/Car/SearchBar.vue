@@ -1,18 +1,29 @@
 <script>
 export default {
-  props: {
-    value: String
+  data () {
+    return {
+      value: ''
+    }
   },
+  props: {
+    value:String
+  },
+  methods: {
+    onClickEmit(){
+      this.$emit('input-emit', this.value);
+    }
+  }
 }
 </script>
 <!-- v-model="value" -->
+<!-- @input="$emit('input-emit',value)" -->
 <template lang="pug">
-input(
-  type= "text",
-  placeholder="Search by city..."
-  @input="$emit('input-emit',value)"
-)
-button(type='button', onclick='addResearch')|Search
+#search-bar
+  input(
+    type= "text",
+    placeholder="Search by city..."
+  )
+  button(@click="onClickEmit")|Search
 
 </template>
 
