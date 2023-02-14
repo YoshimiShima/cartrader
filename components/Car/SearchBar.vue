@@ -21,10 +21,10 @@ export default {
 #search-bar
   input(
     type= "text",
-    placeholder="Search by city..."
+    placeholder="Input your wish..."
     v-model="searchValue"
   )
-  button(type="button" @click="onClickEmit")|Search
+  button(type="button" @click="onClickEmit")|Dream
 
 </template>
 

@@ -36,7 +36,7 @@ export default {
 .page{
   display: grid;
   height: 1500px;
-  grid-template-rows:48% 52%;
+  grid-template-rows:47% 53%;
   grid-template-columns: 100%;
 }
 .carHero{
@@ -46,9 +46,12 @@ export default {
 .result{
   grid-row: 2;
   grid-column: 1;
-  font-size: 48px;
+  font-size: 38px;
   color: sienna;
   font-family: serif;
+}
+h1{
+  margin: 5px;
 }
 /* タブレット */
   @media only screen and (max-width: 1000px) and (min-width: 768px) {
@@ -58,6 +61,9 @@ export default {
     .result{
       font-size: 24px;
     }
+    h1{
+      margin: 20px;
+    }
   }
     /* スマホ */
   @media only screen and (max-width: 767px) {
@@ -66,6 +72,9 @@ export default {
     }
     .result{
       font-size: 12px;
+    }
+    h1{
+      margin: 20px;
     }
     }
   </style>

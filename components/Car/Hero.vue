@@ -13,11 +13,11 @@ export default {
     message:String
   },
   methods: {
+    // receive() {
+    //   this.value = value;
+    //   this.messageEmit(value);
+    // },
     receive(value) {
-      this.value = value;
-      this.messageEmit;
-    },
-    messageEmit(value) {
       this.$emit('received-message', value);
     }
   }
@@ -29,7 +29,7 @@ export default {
   div
     .top-view
       .top-bg
-      .h1.h1 find your car
+      .h1.h1 what is your dream car?
         CarSearchBar(value="text" @input-emit="receive")
 </template>
 
