@@ -6,12 +6,22 @@ export default {
   },
   data () {
     return {
-      value: 'find your drive'
+      value: ''
     }
   },
+  props: {
+    message: {
+      type: String,
+      default: ''
+    }
+  }
   methods: {
     receive(value) {
       this.value = value;
+      this.messageEmit;
+    },
+    messageEmit() {
+      this.$emit('received-message', this.message);
     }
   }
 }
@@ -21,8 +31,8 @@ export default {
 #receive-area
   div
     .top-view
-      div.top-bg
-        .h1.h1 {{ value }}
+      .top-bg
+      .h1.h1 {{ value }}
           CarSearchBar(value="text" @input-emit="receive")
 </template>
 
@@ -31,16 +41,22 @@ export default {
     width: 100%;
     height: 800px;
     background-image: url('https://carconfigurator.ferrari.com/assets/cars/portofinom/packages/default/car-ferrari-portofino-m_splash.jpg');
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     text-align: center;
     color: white;
     position:relative;
   }
   .top-bg {
-    width: 100%;
-    height: 800px;
+    /* width: 100%;
+    height: 800px; */
     background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
   .h1 {
     position:absolute;
@@ -59,6 +75,8 @@ export default {
       height: 500px;
       font-size: 32px;
       vertical-align: bottom;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
     .h1{
       font-size: 48px;

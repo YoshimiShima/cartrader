@@ -4,3 +4,5 @@ div
   slot
 
 </template>
+<style>
+</style>
