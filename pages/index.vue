@@ -24,9 +24,10 @@ export default {
 <template lang="pug">
 .page
   .carHero
-    CarHero
+    CarHero(message="text" @received-message="receiveMessage")
   .result
-    h1(value="text" @received-message="receiveMessage") {{ message }}
+    h1 {{ message }}
+
 
 
 </template>

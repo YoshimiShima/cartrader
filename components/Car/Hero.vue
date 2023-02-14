@@ -17,8 +17,8 @@ export default {
       this.value = value;
       this.messageEmit;
     },
-    messageEmit() {
-      this.$emit('received-message', this.message);
+    messageEmit(value) {
+      this.$emit('received-message', value);
     }
   }
 }
@@ -30,7 +30,7 @@ export default {
     .top-view
       .top-bg
       .h1.h1 find your car
-          CarSearchBar(@input-emit="receive")
+        CarSearchBar(value="text" @input-emit="receive")
 </template>
 
 <style>
