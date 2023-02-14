@@ -45,7 +45,7 @@ export default {
   }
   .h1 {
     position:absolute;
-    font-size: 64px;
+    font-size: 70px;
     font-family: serif;
     font-weight: 900;
     top:50%;
@@ -57,7 +57,7 @@ export default {
   /* タブレット */
   @media only screen and (max-width: 1000px) and (min-width: 768px) {
     .top-view{
-      height: 300px;
+      height: 500px;
       font-size: 32px;
       vertical-align: bottom;
     }
@@ -68,7 +68,7 @@ export default {
     /* スマホ */
   @media only screen and (max-width: 767px) {
     .top-view {
-      height: 200px;
+      height: 300px;
       font-size: 16px;
     }
     .h1 {

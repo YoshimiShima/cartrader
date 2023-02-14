@@ -2,7 +2,7 @@
 export default {
   data () {
     return {
-      value: ''
+      searchValue: ''
     }
   },
   props: {
@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     onClickEmit(){
-      this.$emit('input-emit', this.value);
+      this.$emit("input-emit", this.searchValue);
     }
   }
 }
@@ -22,8 +22,9 @@ export default {
   input(
     type= "text",
     placeholder="Search by city..."
+    v-model="searchValue"
   )
-  button(@click="onClickEmit")|Search
+  button(type="button" @click="onClickEmit")|Search
 
 </template>
 
@@ -36,5 +37,21 @@ export default {
   }
   button {
     color: blue;
+  }
+
+  /* タブレット */
+  @media only screen and (max-width: 1000px) and (min-width: 768px) {
+    input {
+      width: 250px;
+      height: 20px;
+      font-size: 24px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    input {
+      width: 160px;
+      height: 16px;
+      font-size: 12px;
+    }
   }
 </style>
