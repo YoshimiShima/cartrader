@@ -43,7 +43,7 @@ export default {
   @media only screen and (max-width: 1000px) and (min-width: 768px) {
     input {
       width: 250px;
-      height: 20px;
+      height: 29px;
       font-size: 24px;
     }
   }

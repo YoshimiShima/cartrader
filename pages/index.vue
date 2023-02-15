@@ -9,7 +9,7 @@ export default {
   },
   data () {
     return {
-      message: 'what?'
+      message: false
     }
   },
   methods: {
@@ -26,8 +26,11 @@ export default {
   .carHero
     CarHero(message="text" @received-message="receiveMessage")
   .result
-    h1 you want {{ message }}
-
+    h1(v-if="message")
+      span you can definitely get a
+      |  {{ message }}
+      span  !!
+    h1(v-else)| please tell me
 
 
 </template>
@@ -52,6 +55,9 @@ export default {
 }
 h1{
   margin: 5px;
+}
+span{
+  color: crimson;
 }
 /* タブレット */
   @media only screen and (max-width: 1000px) and (min-width: 768px) {
