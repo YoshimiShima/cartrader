@@ -22,7 +22,7 @@ export default {
   input(
     type= "text",
     placeholder="Input your wish..."
-    v-on:keyup.enter="onClickEmit"
+    v-model="searchValue"
   )
   button(type="button" @click="onClickEmit")|Dream
 
