@@ -22,7 +22,7 @@ export default {
   input(
     type= "text",
     placeholder="Input your wish..."
-    v-model="searchValue"
+    v-on:keyup.enter="onClickEmit"
   )
   button(type="button" @click="onClickEmit")|Dream
 
@@ -37,6 +37,8 @@ export default {
   }
   button {
     color: blue;
+    height: 38px;
+    font-size: 22px;
   }
 
   /* タブレット */
@@ -46,12 +48,22 @@ export default {
       height: 29px;
       font-size: 24px;
     }
+    button {
+    color: blue;
+    height: 28px;
+    font-size: 20px;
+    }
   }
   @media only screen and (max-width: 767px) {
     input {
       width: 160px;
       height: 16px;
       font-size: 12px;
+    }
+    button {
+    color: blue;
+    height: 16px;
+    font-size: 10px;
     }
   }
 </style>
