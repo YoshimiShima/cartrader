@@ -3,13 +3,14 @@
 //   title: "Cartrader",
 // });
 import Hero from '../components/Car/Hero.vue'
+import ResultMessage from '../components/ResultMessage.vue'
 export default {
   components: {
     Hero
   },
   data () {
     return {
-      message: false
+      message: this.$route.query.message
     }
   },
   methods: {
@@ -26,11 +27,7 @@ export default {
   .carHero
     CarHero(message="text" @received-message="receiveMessage")
   .result
-    h1(v-if="message")
-      span you can definitely get a
-      |  {{ message }}
-      span  !!
-    h1(v-else)| please tell me
+    ResultMessage(message="text" @received-message="receiveMessage")
 
 
 </template>
