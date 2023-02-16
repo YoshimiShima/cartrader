@@ -1,8 +1,13 @@
 <script>
 export default {
-  data () {
-    return {
-      result: ''
+  props: {
+    result: {
+      type:String
+    },
+  },
+  methods: {
+    caughtResult() {
+      this.$emit('update:result', this.result)
     }
   }
 }

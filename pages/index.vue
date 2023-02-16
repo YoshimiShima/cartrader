@@ -4,6 +4,7 @@
 // });
 import Hero from '../components/Car/Hero.vue'
 import ResultMessage from '../components/ResultMessage.vue'
+
 export default {
   components: {
     Hero,
@@ -11,21 +12,21 @@ export default {
   },
   data () {
     return {
-      message:'',
-      result:''
+      message: '',
+      result: '',
     }
   },
-  props: {
-    result:String
-  },
+  // props: {
+  //   result:String
+  // },
   methods: {
-    receiveMessage(message) {
-      this.$emit('caught-result', message);
-      console.log(message.value);
+    receivedMessage(message) {
+      this.caughtResult(message);
+      // console.log(message.value)
     },
     caughtResult(result) {
       this.result = result;
-      console.log(this.result);
+    //   console.log(this.result);
     }
   }
 }
@@ -35,9 +36,10 @@ export default {
 <template lang="pug">
 .page
   .carHero
-    CarHero(message="text" @received-message="receiveMessage")
+    CarHero(message="text" @received-message="receivedMessage")
   .result
-    ResultMessage(result="text" @caught-result="caughtResult")
+    //- ResultMessage(:result="message")
+    ResultMessage(result="" @caught-result="caughtResult")
 
 
 </template>
@@ -56,7 +58,7 @@ export default {
 .result{
   grid-row: 2;
   grid-column: 1;
-  font-size: 32px;
+  font-size: 28px;
   color: sienna;
   font-family: serif;
 }

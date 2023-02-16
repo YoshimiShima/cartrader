@@ -1,28 +1,32 @@
 <template lang="pug">
 header
-  .nav-logo
+  .header-link
     a(href="/") Cartrader
-      p.box
+    nav
+      NuxtLink(to="./Detail") recommend
+    p.box
 </template>
 
 <style>
-.nav-logo {
+.header-link {
   font-family: 'Courier New', Courier, monospace;
   color: gray;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 900;
   display: flex;
+  grid-column-gap: 20px;
   padding: 20px;
+
   background-color: cadetblue;
 }
 @media only screen and (max-width: 1000px) and (min-width: 768px) {
-  .nav-logo {
-    font-size: 24px;
+  .header-link {
+    font-size: 28px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .nav-logo {
-    font-size: 18px;
+  .header-link {
+    font-size: 12px;
   }
 }
 .p {
