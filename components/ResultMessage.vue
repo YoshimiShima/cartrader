@@ -3,13 +3,8 @@ export default {
   props: {
     result: {
       type:String
-    },
-  },
-  methods: {
-    caughtResult() {
-      this.$emit('update:result', this.result)
     }
-  }
+  },
 }
 </script>
 

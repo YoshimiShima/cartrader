@@ -39,7 +39,7 @@ export default {
     CarHero(message="text" @received-message="receivedMessage")
   .result
     //- ResultMessage(:result="message")
-    ResultMessage(result="" @caught-result="caughtResult")
+    ResultMessage(:result="result" @caught-result="caughtResult")
 
 
 </template>
