@@ -6,16 +6,26 @@ import Hero from '../components/Car/Hero.vue'
 import ResultMessage from '../components/ResultMessage.vue'
 export default {
   components: {
-    Hero
+    Hero,
+    ResultMessage
   },
   data () {
     return {
-      message: this.$route.query.message
+      message:'',
+      result:''
     }
   },
+  // props: {
+  //   result:String
+  // },
   methods: {
     receiveMessage(message) {
-      this.message = message;
+      this.$emit('caught-result', message);
+      console.log(message.value);
+    },
+    caughtResult(result) {
+      this.result = result;
+      console.log(this.result);
     }
   }
 }
@@ -27,7 +37,7 @@ export default {
   .carHero
     CarHero(message="text" @received-message="receiveMessage")
   .result
-    ResultMessage(message="text" @received-message="receiveMessage")
+    ResultMessage(result="text" @caught-result="caughtResult")
 
 
 </template>

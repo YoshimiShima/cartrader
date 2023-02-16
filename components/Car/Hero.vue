@@ -13,10 +13,6 @@ export default {
     message:String
   },
   methods: {
-    // receive() {
-    //   this.value = value;
-    //   this.messageEmit(value);
-    // },
     receive(value) {
       this.$emit('received-message', value);
     }
