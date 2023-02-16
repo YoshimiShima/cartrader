@@ -15,9 +15,9 @@ export default {
       result:''
     }
   },
-  // props: {
-  //   result:String
-  // },
+  props: {
+    result:String
+  },
   methods: {
     receiveMessage(message) {
       this.$emit('caught-result', message);
