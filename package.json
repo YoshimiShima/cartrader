@@ -8,11 +8,19 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.1.2"
+    "@css-render/vue3-ssr": "^0.15.12",
+    "@graphql-codegen/cli": "^3.0.0",
+    "@graphql-codegen/typescript": "^3.0.0",
+    "@nuxtjs/apollo": "^3.0.7",
+    "naive-ui": "^2.34.3",
+    "nuxt": "^3.1.2",
+    "vfonts": "^0.0.3"
   },
   "dependencies": {
-    "pug": "^2.0.4",
-    "pug-loader": "^2.4.0",
+    "@types/node": "^18.13.0",
+    "graphql": "^15.8.0",
+    "pug": "^3.0.2",
+    "pug-loader": "^1.0.2",
     "pug-plain-loader": "^1.1.0"
   }
 }
