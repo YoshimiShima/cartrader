@@ -6,7 +6,7 @@ NConfigProvider
       ProvideData
 #usersQuery
   ul
-    li(v-for='user in users', :key='user.id') {{ user.name }}
+    li(v-for='user in users', :key='user.id') {{ user.post.post }}
 
 </template>
 
@@ -19,14 +19,30 @@ import {
   // @ts-ignore
 import ProvideData from '../components/ProvideData.vue'
 
-import { useQuery } from '@nuxtjs/apollo'
-import usersQuery from '../graphql/query.gql'
+// import { useQuery } from '@nuxtjs/apollo'
+// import usersQuery from '../graphql/query.gql'
 
-const { data } = useQuery(usersQuery)
-const users = ref(data.users)
+// const { data } = useQuery(usersQuery)
+// const users = ref(data.users)
 
+import Query from '../apollo/query.gql'
+import { ref } from 'vue'
+const { clients, getToken, onLogin, onLogout } = useApollo()
 
-
+const query = gql`
+  query getUsers {
+    users {
+      id
+      name
+      age
+      occupation
+      age
+      posts {
+        post
+      }
+    }
+  }
+`
 </script>
 
 <style>

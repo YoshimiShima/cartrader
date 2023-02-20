@@ -1,0 +1,9 @@
+query users {
+  users(order_by: { id: asc }) {
+    id
+    name
+    age
+    occupation
+    created_at
+    }
+}
