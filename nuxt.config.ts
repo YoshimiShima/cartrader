@@ -13,13 +13,13 @@
 // //   }
 
 // export default config
-import { defineNuxtConfig, useModules } from '@nuxt/kit'
-export default ({
-    // modules: ['@nuxtjs/apollo'],
-    // plugins: ['@/plugins/apollo'],
+// import { defineNuxtConfig, useModules } from '@nuxt/kit'
+import { defineNuxtConfig } from 'nuxt/config'
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/apollo'],
+
     apollo: {
-      includeNodeModules: true,
-      clientConfigs: {
+      clients: {
         default: {
           httpEndpoint: 'https://yoshimi-exam.hasura.app/v1/graphql',
           httpLinkOptions: {
@@ -30,10 +30,10 @@ export default ({
         }
       }
     },
-    setupModules() {
-      useModules([
-        '@nuxtjs/apollo',
-        '@/plugins/apollo'
-      ])
-    }
+    // setupModules() {
+    //   useModules([
+    //     '@nuxtjs/apollo',
+    //     '@/plugins/apollo'
+    //   ])
+    // }
   })
