@@ -8,7 +8,15 @@
     "noUnusedLocals": false,
     "types": ["@nuxt/kit"],
     "paths": {
-      "@nuxt/kit": ["node_modules/@nuxt/kit/types"]
-    }
-  }
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

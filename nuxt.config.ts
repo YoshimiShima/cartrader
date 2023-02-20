@@ -13,10 +13,10 @@
 // //   }
 
 // export default config
-// import { defineNuxtConfig } from '@nuxt/kit'
+import { defineNuxtConfig, useModules } from '@nuxt/kit'
 export default ({
     // modules: ['@nuxtjs/apollo'],
-    // plugins: ['@/plugins/apollo'],t
+    // plugins: ['@/plugins/apollo'],
     apollo: {
       includeNodeModules: true,
       clientConfigs: {
@@ -29,5 +29,11 @@ export default ({
           },
         }
       }
+    },
+    setupModules() {
+      useModules([
+        '@nuxtjs/apollo',
+        '@/plugins/apollo'
+      ])
     }
   })
