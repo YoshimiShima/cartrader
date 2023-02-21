@@ -6,7 +6,7 @@ NConfigProvider
       ProvideData
 #usersQuery
   ul
-    li(v-for='user in users', :key='user.id') {{ users.name }}
+    li {{ user.posts }}
 
 </template>
 
@@ -25,9 +25,9 @@ import ProvideData from '../components/ProvideData.vue'
 // const { data } = useQuery(usersQuery)
 // const users = ref(data.users)
 
-import users from '../apollo/query.gql'
-import { ref } from 'vue'
-const { clients, getToken, onLogin, onLogout } = useApollo()
+// import users from '../apollo/query.gql'
+// import { ref } from 'vue'
+// const { clients, getToken, onLogin, onLogout } = useApollo()
 
 const query = gql`
   query getUsers {
@@ -48,6 +48,8 @@ const query = gql`
     }
   }
 `
+console.log ("query", users.post)
+const { data } = await useAsyncQuery(query)
 console.log ("query", users.post)
 </script>
 

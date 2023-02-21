@@ -1,9 +1,17 @@
 query users {
   users(order_by: { id: asc }) {
     id
-    name
-    age
-    occupation
-    created_at
-    }
+      name
+      age
+      occupation
+      age
+      address
+      gender
+      posts {
+        post
+        id
+        user_id
+        created_at
+      }
+  }
 }
