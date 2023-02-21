@@ -4,9 +4,13 @@ NConfigProvider
     NNotificationProvider
       h1 input form
       ProvideData
-#usersQuery
-  ul
-    li {{ user.posts }}
+
+      button(@click='load_data()') query
+      #query
+        ul
+          li(v-for='(user,index) in users') {{ user.name }}
+        //- ul
+        //-   li(v-for='(post,index) in posts') {{ post.post }}
 
 </template>
 
@@ -16,41 +20,37 @@ import {
   NMessageProvider,
   NNotificationProvider,
 } from 'naive-ui'
-  // @ts-ignore
+
+
 import ProvideData from '../components/ProvideData.vue'
 
 // import { useQuery } from '@nuxtjs/apollo'
-// import usersQuery from '../graphql/query.gql'
 
-// const { data } = useQuery(usersQuery)
-// const users = ref(data.users)
+import query from '../apollo/UserQuery.gql'
+// import PostQuery from '../apollo/PostQuery.gql'
 
-// import users from '../apollo/query.gql'
-// import { ref } from 'vue'
-// const { clients, getToken, onLogin, onLogout } = useApollo()
 
-const query = gql`
-  query getUsers {
-    users {
-      id
-      name
-      age
-      occupation
-      age
-      address
-      gender
-      posts {
-        post
-        id
-        user_id
-        created_at
-      }
-    }
+const users = ref([])
+// const posts = ref([])
+
+// const load_data = (async() => {
+//   const { data: userData } = await useAsyncQuery(usersQuery)
+//   if(userData?.value?.users){
+//     users.value = userData.value.users
+//   }
+// })
+const load_data = (async() => {
+  const { data } = await useAsyncQuery(query)
+  if(data.value?.users){
+    users.value = data.value.users
   }
-`
-console.log ("query", users.post)
-const { data } = await useAsyncQuery(query)
-console.log ("query", users.post)
+})
+//   const { data: postData } = await useAsyncQuery(postsQuery)
+//   if(postData?.value?.posts){
+//     posts.value = postData.value.posts
+//   }
+// })
+
 </script>
 
 <style>
