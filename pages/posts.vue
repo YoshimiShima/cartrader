@@ -33,23 +33,22 @@ const users = ref([])
 const posts = ref([])
 
 const load_data = (async() => {
-  const { data } = await useAsyncQuery(UserQuery, PostQuery)
-  if(data?.value?.users){
-    users.value = data.value.users
+  const userData = await useAsyncQuery(UserQuery)
+  if(userData?.value?.users){
+    users.value = userData.value.users
   }
 
+  const postData = await useAsyncQuery(PostQuery)
+  if(postData?.value?.posts){
+    posts.value = postData.value.posts
+  }
+})
 // const load_data = (async() => {
 //   const { data } = await useAsyncQuery(query)
 //   if(data.value?.users){
 //     users.value = data.value.users
 //   }
 // })
-  // const { data } = await useAsyncQuery(postQuery)
-  if(data?.value?.posts){
-    posts.value = data.value.posts
-  }
-})
-console.log(posts.post)
 
 </script>
 
