@@ -1,0 +1,25 @@
+mutation insert_users ($input: UserInput!){
+  insert_users(input: $input)
+    objects: {
+      name: $address
+      age: $age
+      id: $id
+      gender: $gender
+      address: $address
+      occupation: $occupation
+      posts: {
+        data: {
+          post: $post
+        }
+      }
+      }
+
+    returning {
+      id
+      name
+      age
+      gender
+      address
+      occupation
+    }
+  }
