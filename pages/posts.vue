@@ -28,7 +28,7 @@ NConfigProvider
       button(@click="editUser(user)") edit
       button(@click="deleteUser(user)") delete
 
-  div userForm
+  userForm
     h2 Insert User
     div
       input(v-model='editedUser.name', type='text', placeholder='name')
@@ -41,7 +41,7 @@ NConfigProvider
     div
       input(v-model='editedUser.address', type='text', placeholder='address')
     div
-      textarea(v-model='editedUser.posts.post', cols="30", rows="10", type='text', placeholder='post')
+      textarea(v-model='editedPost.post', cols="30", rows="10", type='text', placeholder='post')
     div
       button(@click='close') quit
       button(@click='save') save
@@ -66,11 +66,10 @@ import {
 import ProvideData from '../components/ProvideData.vue'
 
 // import { useQuery } from '@nuxtjs/apollo'
-import { defineComponent } from 'vue';
 
 import UserQuery from '../apollo/UserQuery.gql'
 import PostQuery from '../apollo/PostQuery.gql'
-import InsertUser from '../apollo/InsertUser.gql'
+// import InsertUser from '../apollo/InsertUser.gql'
 
 const users = ref([])
 const posts = ref([])
@@ -82,16 +81,20 @@ interface User {
   gender: string | null;
   address: string | null;
   occupation: string | null;
+}
+interface Post {
   post: string | null;
 }
 
-const defaultEditedUser: User = {
+const editedUser: User = {
   id: null,
   name: null,
   age: null,
   gender: null,
   address: null,
-  occupation: null,
+  occupation: null
+};
+const editedPost: Post = {
   post: null
 };
 
@@ -107,24 +110,24 @@ const load_data = (async() => {
   console.log(users.posts.post)
 })
 
-const variables = ref({
-  name: '',
-  age: '',
-  gender: '',
-  occupation: '',
-  address: '',
-  posts: '',
-});
+// const variables = ref({
+//   name: '',
+//   age: '',
+//   gender: '',
+//   occupation: '',
+//   address: '',
+//   posts: '',
+// });
 
-const { mutate } = useMutation(InsertUser, { variables });
-  (async () => {
-    try {
-      const { data } = await mutate();
-      console.log('Mutation result:', data);
-    } catch (error) {
-      console.error(error);
-      }
-  })();
+// const { mutate } = useMutation(InsertUser, { variables });
+//   (async () => {
+//     try {
+//       const { data } = await mutate();
+//       console.log('Mutation result:', data);
+//     } catch (error) {
+//       console.error(error);
+//       }
+//   })();
 
 
 

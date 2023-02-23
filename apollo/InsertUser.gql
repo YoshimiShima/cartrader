@@ -1,7 +1,7 @@
 mutation insert_users ($input: UserInput!){
   insert_users(input: $input)
     objects: {
-      name: $address
+      name: $name
       age: $age
       id: $id
       gender: $gender
