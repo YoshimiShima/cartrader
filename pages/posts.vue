@@ -28,22 +28,23 @@ NConfigProvider
       button(@click="editUser(user)") edit
       button(@click="deleteUser(user)") delete
 
-  userForm
+  div
     h2 Insert User
     div
-      input(v-model='editedUser.name', type='text', placeholder='name')
+      input(v-model='variables.id', type='number', placeholder='id')
     div
-      input(v-model='editedUser.age', type='number', placeholder='age')
+      input(v-model='variables.name', type='text', placeholder='name')
     div
-      input(v-model='editedUser.gender', type='text', placeholder='gender')
+      input(v-model='variables.age', type='number', placeholder='age')
     div
-      input(v-model='editedUser.occupation', type='text', placeholder='occupation')
+      input(v-model='variables.gender', type='text', placeholder='gender')
     div
-      input(v-model='editedUser.address', type='text', placeholder='address')
+      input(v-model='variables.occupation', type='text', placeholder='occupation')
     div
-      textarea(v-model='editedPost.post', cols="30", rows="10", type='text', placeholder='post')
+      input(v-model='variables.address', type='text', placeholder='address')
     div
-      button(@click='close') quit
+      textarea(v-model='variables.post', cols="30", rows="10", type='text', placeholder='post')
+    div
       button(@click='save') save
 
 
@@ -69,7 +70,7 @@ import ProvideData from '../components/ProvideData.vue'
 
 import UserQuery from '../apollo/UserQuery.gql'
 import PostQuery from '../apollo/PostQuery.gql'
-// import InsertUser from '../apollo/InsertUser.gql'
+import InsertUser from '../apollo/InsertUser.gql'
 
 const users = ref([])
 const posts = ref([])
@@ -86,17 +87,17 @@ interface Post {
   post: string | null;
 }
 
-const editedUser: User = {
-  id: null,
-  name: null,
-  age: null,
-  gender: null,
-  address: null,
-  occupation: null
-};
-const editedPost: Post = {
-  post: null
-};
+// const editedUser: User = {
+//   id: null,
+//   name: null,
+//   age: null,
+//   gender: null,
+//   address: null,
+//   occupation: null
+// };
+// const editedPost: Post = {
+//   post: null
+// };
 
 const load_data = (async() => {
   const userData = await useAsyncQuery(UserQuery)
@@ -110,14 +111,27 @@ const load_data = (async() => {
   console.log(users.posts.post)
 })
 
-// const variables = ref({
-//   name: '',
-//   age: '',
-//   gender: '',
-//   occupation: '',
-//   address: '',
-//   posts: '',
-// });
+load_data()
+
+const variables = ref({
+  id: '',
+  name: '',
+  age: '',
+  gender: '',
+  occupation: '',
+  address: '',
+  posts: '',
+});
+
+const save = async () => {
+  const { data } = await mutate({ input: variables.value })
+  console.log('Mutation result:', data)
+  await refetchQueries([{ query: UserQuery }])
+  console.log(InsertUser)
+  console.log(data)
+}
+
+const { mutate, refetchQueries } = useMutation(InsertUser)
 
 // const { mutate } = useMutation(InsertUser, { variables });
 //   (async () => {
@@ -128,9 +142,6 @@ const load_data = (async() => {
 //       console.error(error);
 //       }
 //   })();
-
-
-
 
 </script>
 

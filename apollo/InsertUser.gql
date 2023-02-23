@@ -1,18 +1,14 @@
 mutation insert_users ($input: UserInput!){
   insert_users(input: $input)
-    objects: {
-      name: $name
-      age: $age
-      id: $id
-      gender: $gender
-      address: $address
-      occupation: $occupation
-      posts: {
-        data: {
-          post: $post
-        }
-      }
-      }
+    name
+    age
+    id
+    gender
+    address
+    occupation
+    posts {
+      post
+    }
 
     returning {
       id
@@ -22,4 +18,5 @@ mutation insert_users ($input: UserInput!){
       address
       occupation
     }
-  }
+}
+
