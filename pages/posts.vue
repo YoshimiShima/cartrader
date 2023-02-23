@@ -6,7 +6,6 @@ NConfigProvider
       ProvideData
 #query
   button(@click='load_data()') query
-  button(@click='isShowEditArea = true') new user
   tr
     th ID
     th name
@@ -29,8 +28,8 @@ NConfigProvider
       button(@click="editUser(user)") edit
       button(@click="deleteUser(user)") delete
 
-  div(v-if='isShowEditArea')
-    h2 {{ formTitle }}
+  div userForm
+    h2 Insert User
     div
       input(v-model='editedUser.name', type='text', placeholder='name')
     div
@@ -95,23 +94,6 @@ const defaultEditedUser: User = {
   occupation: null,
   post: null
 };
-
-const App = defineComponent({
-  data() {
-    return {
-      users: [] as User[],
-      isShowEditArea: false,
-      editedIndex: -1,
-      editedUser: { ...defaultEditedUser },
-      defaultEditedUser,
-    };
-  },
-  computed: {
-    formTitle(): string {
-      return this.editedIndex === -1 ? 'new user input' : 'edit user';
-    },
-  },
-});
 
 const load_data = (async() => {
   const userData = await useAsyncQuery(UserQuery)
